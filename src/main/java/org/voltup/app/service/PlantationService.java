@@ -1,8 +1,6 @@
 package org.voltup.app.service;
 
 import org.voltup.app.domain.Farm;
-import org.voltup.app.domain.Plantation;
-import org.voltup.app.domain.Strategy;
 import org.voltup.app.infra.exceptions.PlantationNotFoundException;
 import org.voltup.app.repository.PlantationRepository;
 import org.springframework.beans.factory.annotation.Autowired;

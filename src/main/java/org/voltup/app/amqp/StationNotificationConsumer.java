@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class FarmNotificationConsumer {
+public class StationNotificationConsumer {
 
     @Autowired
     private UserService userService;
@@ -17,7 +17,7 @@ public class FarmNotificationConsumer {
     @Autowired
     private RabbitTemplate rabbitTemplate;
 
-    @RabbitListener(queues = "farm.created")
+    @RabbitListener(queues = "station.created")
     public void handleCreatedFarm(Farm farm) {
         User user = userService.findById(farm.getUser().getId());
 

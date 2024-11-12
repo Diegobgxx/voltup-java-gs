@@ -1,7 +1,6 @@
 package org.voltup.app.ai;
 
 import org.voltup.app.domain.Farm;
-import org.voltup.app.domain.Plantation;
 import org.voltup.app.service.FarmService;
 import org.voltup.app.service.PlantationService;
 import org.springframework.context.annotation.Bean;

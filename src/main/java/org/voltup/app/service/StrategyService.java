@@ -1,6 +1,5 @@
 package org.voltup.app.service;
 
-import org.voltup.app.domain.Strategy;
 import org.voltup.app.infra.exceptions.StrategyNotFoundException;
 import org.voltup.app.repository.StrategyRepository;
 import org.springframework.beans.factory.annotation.Autowired;
