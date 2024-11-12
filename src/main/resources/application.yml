@@ -1,0 +1,54 @@
+spring:
+  rabbitmq:
+    host: localhost
+    port: 5672
+    username: rabbitmq
+    password: rabbitmq
+
+  application:
+    name: app
+  datasource:
+    url: jdbc:oracle:thin:@oracle.fiap.com.br:1521/ORCL
+    username: RM99615
+    password: 260105
+    driver-class-name: oracle.jdbc.OracleDriver
+  jpa:
+    show-sql: true
+  flyway:
+    url: jdbc:oracle:thin:@oracle.fiap.com.br:1521/ORCL
+    user: RM99615
+    password: 260105
+    locations: db/migration/
+    enabled: true
+    baseline-on-migrate: true
+  ai:
+    openai:
+      api-key: ${OPEN_AI_API_KEY}
+
+api:
+  security:
+    secret: sa-secret
+
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health, info, openapi, swagger-ui
+
+  endpoint:
+    health:
+      show-details: always
+    info:
+      git:
+        enabled: true
+        mode: full
+
+springdoc:
+  show-actuator: true
+  swagger-ui:
+    path: /swagger-ui
+    enabled: true
+  api-docs:
+    enabled: true
