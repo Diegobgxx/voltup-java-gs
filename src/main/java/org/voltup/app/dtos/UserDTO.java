@@ -5,7 +5,6 @@ import jakarta.persistence.Enumerated;
 import jakarta.validation.constraints.Email;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
-import org.voltup.app.domain.Type;
 
 public record UserDTO(
         @Size(min = 1, max = 255)
@@ -16,8 +15,6 @@ public record UserDTO(
         String lastName,
         @Email
         String email,
-        @Enumerated(EnumType.STRING)
-        Type type,
         @NotBlank
         String password
 ) {}

@@ -13,13 +13,13 @@ public class ChatService {
     public ChatService(ChatClient.Builder builder) {
         this.chatClient = builder
                 .defaultSystem("""
-                            Você é um assitente virtual para dar insights para uma fazenda.
-                            Você está conversando com fazendeiros e agronomos.
-                            Seja Objetivo e mostre numeros.
-                            Tente manter o assunto dentro do contexto de agro.
-                            Você pode usar chamada de funções para buscar informações da plantaçao, da fazenda e das strategias utilizadas.
+                            Você é um assitente virtual da voltup para buscar os postos de carregamento mais próximos.
+                            Você está conversando com pessoas que tem veiculos eletricos.
+                            Seja Objetivo.
+                            Tente manter o assunto dentro do contexto de postos de carregamento de energia de carros elétricos.
+                            Você pode usar chamada de funções para buscar informações dos postos.
                         """)
-                .defaultFunctions("findPlantation", "findFarm")
+                .defaultFunctions("findChargingStation")
                 .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
                 .build();
     }

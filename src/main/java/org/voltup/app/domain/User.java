@@ -26,7 +26,6 @@ public class User implements UserDetails {
     private String lastName;
     private String email;
     private String password;
-    private Type type;
     @Column(nullable = false)
     private LocalDateTime createdAt;
     @Column(nullable = false)
