@@ -11,11 +11,11 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
-public class FarmAMQPConfiguration {
+public class StationAMQPConfiguration {
 
     @Bean
     public Queue createQueue(){
-        return new Queue("farm.created", false);
+        return new Queue("station.created", false);
     }
 
     @Bean

@@ -6,10 +6,10 @@ import io.swagger.v3.oas.annotations.media.Content;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import jakarta.validation.Valid;
-import org.voltup.app.ai.ChatService;
-import org.voltup.app.dtos.ChatDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+import org.voltup.app.ai.ChatService;
+import org.voltup.app.dtos.ChatDTO;
 
 @RestController
 @RequestMapping("/chat")

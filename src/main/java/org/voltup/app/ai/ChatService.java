@@ -19,7 +19,7 @@ public class ChatService {
                             Tente manter o assunto dentro do contexto de postos de carregamento de energia de carros elétricos.
                             Você pode usar chamada de funções para buscar informações dos postos que são compativeis com o veiculo do usuário.
                         """)
-                .defaultFunctions("findChargingStation")
+                .defaultFunctions("findChargingStation", "findVehicles")
                 .defaultAdvisors(new MessageChatMemoryAdvisor(new InMemoryChatMemory()))
                 .build();
     }

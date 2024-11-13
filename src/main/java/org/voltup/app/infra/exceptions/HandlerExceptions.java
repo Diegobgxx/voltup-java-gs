@@ -35,8 +35,8 @@ public class HandlerExceptions {
     }
 
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(value = {UserNotFoundException.class, FarmNotFoundException.class,
-            StrategyNotFoundException.class, PlantationNotFoundException.class})
+    @ExceptionHandler(value = {UserNotFoundException.class, StationNotFoundException.class,
+            ConnectorTypeNotFoundException.class, VehicleNotFoundException.class})
     public ExceptionDTO handleNotFoundException(NotFoundException exception) {
         return new ExceptionDTO(exception.getMessage(), 404);
     }

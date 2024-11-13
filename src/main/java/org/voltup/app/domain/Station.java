@@ -7,6 +7,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.util.List;
+import java.util.UUID;
 
 @Getter
 @Setter
@@ -20,7 +21,7 @@ public class Station {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id")
-    private Long id;
+    private UUID id;
 
     @Column(name = "name", nullable = false)
     private String name;
@@ -34,9 +35,9 @@ public class Station {
     @Column(name = "longitude", nullable = false)
     private double longitude;
 
-    @Column(name = "connector_types", columnDefinition = "text")
+    @Column(name = "connector_type")
     @ManyToMany
-    private List<String> connectorTypes;
+    private List<ConnectorType> connectorTypes;
 
     @Column(name = "power", nullable = false)
     private double power;

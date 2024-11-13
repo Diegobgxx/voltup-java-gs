@@ -1,39 +1,46 @@
 package org.voltup.app.ai;
 
-import org.voltup.app.domain.Farm;
-import org.voltup.app.service.FarmService;
-import org.voltup.app.service.PlantationService;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Description;
+import org.voltup.app.domain.Station;
+import org.voltup.app.domain.Vehicle;
+import org.voltup.app.service.StationService;
+import org.voltup.app.service.VehicleService;
 
+import java.util.List;
 import java.util.UUID;
 import java.util.function.Function;
 
 @Configuration
 public class ChatTools {
 
-    public record FarmRequest(String id){}
-    public record PlantationRequest(String id){}
+    private final StationService stationService;
+    private final VehicleService vehicleService;
 
-    private final FarmService farmService;
-    private final PlantationService plantationService;
-
-    public ChatTools(FarmService farmService, PlantationService plantationService) {
-        this.farmService = farmService;
-        this.plantationService = plantationService;
+    public ChatTools(StationService stationService, VehicleService vehicleService) {
+        this.stationService = stationService;
+        this.vehicleService = vehicleService;
     }
 
     @Bean
-    @Description("Busca uma Fazenda por id")
-    public Function<FarmRequest, Farm> findFarm(){
-        return request -> farmService.findById(UUID.fromString(request.id()));
+    @Description("Busca lista de veiculos por usuario id")
+    public Function<VehicleRequest, List<Vehicle>> findVehicles() {
+        return request -> vehicleService.findByUserId(UUID.fromString(request.userId()));
     }
 
+
     @Bean
-    @Description("Busca uma Plantaçãp por id")
-    public Function<PlantationRequest, Plantation> findPlantation(){
-        return request -> plantationService.findById(UUID.fromString(request.id()));
+    @Description("Busca lista de Estações de Carregamento por  tipo de conector")
+    public Function<StationRequest, List<Station>> findChargingStation() {
+        return request -> stationService.findAllByConnectorType(UUID.fromString(request.connectorTypeId()));
     }
+
+    public record StationRequest(String connectorTypeId) {
+    }
+
+    public record VehicleRequest(String userId) {
+    }
+
 
 }
