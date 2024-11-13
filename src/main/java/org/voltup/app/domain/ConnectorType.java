@@ -19,5 +19,5 @@ public class ConnectorType {
     private UUID id;
     private String name;
     @ManyToMany
-    private List<Station> stations;
+    private List<Station> station;
 }

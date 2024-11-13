@@ -10,8 +10,8 @@ import java.util.Collection;
 import java.util.List;
 import java.util.UUID;
 
-@Entity(name = "tb_user")
-@Table(name = "tb_user")
+@Entity(name = "tb_user_voltup")
+@Table(name = "tb_user_voltup")
 @Getter
 @Setter
 @AllArgsConstructor

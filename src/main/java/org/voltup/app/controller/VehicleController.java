@@ -14,14 +14,14 @@ import java.util.List;
 import java.util.UUID;
 
 @RestController
-@RequestMapping("/strategy")
+@RequestMapping("/vehicle")
 public class VehicleController {
 
     @Autowired
     private VehicleService service;
 
     @PostMapping
-    @Operation(summary = "Create a Strategy")
+    @Operation(summary = "Create a Vehicle")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "500", description = "Internal Server Error",
                     content = @Content),
