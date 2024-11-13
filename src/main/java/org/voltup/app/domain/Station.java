@@ -31,7 +31,8 @@ public class Station {
     private double longitude;
 
     @ManyToMany
-    private List<ConnectorType> connector;
+    @JoinTable(name = "tb_connector_type_station")
+    private List<ConnectorType> connectorTypes;
 
     private double power;
 

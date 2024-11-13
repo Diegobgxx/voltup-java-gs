@@ -9,8 +9,8 @@ import java.util.UUID;
 @Builder
 @Getter
 @Setter
-@Entity(name = "tb_connector")
-@Table(name = "tb_connector")
+@Entity(name = "tb_connector_type")
+@Table(name = "tb_connector_type")
 @NoArgsConstructor
 @AllArgsConstructor
 public class ConnectorType {
@@ -19,5 +19,6 @@ public class ConnectorType {
     private UUID id;
     private String name;
     @ManyToMany
-    private List<Station> station;
+    @JoinTable(  name = "tb_connector_type_station")
+    private List<Station> stations;
 }
