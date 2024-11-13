@@ -14,10 +14,14 @@ import org.springframework.context.annotation.Configuration;
 public class StationAMQPConfiguration {
 
     @Bean
-    public Queue createQueue(){
+    public Queue createStationQueue(){
         return new Queue("station.created", false);
     }
 
+    @Bean
+    public Queue createUserQueue(){
+        return new Queue("user.notifications.newStation", false);
+    }
     @Bean
     public RabbitAdmin createRabbitAdmin(ConnectionFactory conn) {
         return new RabbitAdmin(conn);
