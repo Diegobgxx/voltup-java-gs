@@ -31,7 +31,6 @@ public class UserService {
                 .lastName(dto.lastName())
                 .email(dto.email())
                 .password(encryptedPassword)
-                .type(dto.type())
                 .createdAt(LocalDateTime.now())
                 .updatedAt(LocalDateTime.now())
                 .deletedAt(null)
