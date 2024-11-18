@@ -43,13 +43,13 @@ Para executar este projeto em sua máquina local, siga as instruções abaixo:
 2. Clone este repositório para o seu ambiente local:
 
    ```bash
-   git clone https://github.com/PauloCesarRR/backend.farmsight.git
+   git clone https://github.com/PauloCesarRR/voltup-java.git
    ```
 
 3. Navegue até o diretório raiz do projeto:
 
    ```bash
-   cd backend.farmsight
+   cd voltup-java
    ```
 
 4. Execute o seguinte comando para construir o projeto:

@@ -1,9 +1,22 @@
 version: '3.9'
 
 services:
-  rabbit1:
+  voltup:
+    container_name: "voltup"
+    image: voltup:latest
+    build:
+      context: .
+    ports:
+      - "8080:8080"
+    environment:
+      RABBIT_HOST: rabbit
+      OPENAPIKEY:
+
+    networks:
+      default:
+  rabbit:
     image: "rabbitmq:3-management"
-    hostname: "rabbit1"
+    hostname: "rabbit"
     environment:
       RABBITMQ_DEFAULT_USER: "rabbitmq"
       RABBITMQ_DEFAULT_PASS: "rabbitmq"
@@ -12,3 +25,11 @@ services:
       - "5672:5672"
     labels:
       NAME: "rabbitmq1"
+    networks:
+      default:
+
+networks:
+  default:
+    internal: true
+
+

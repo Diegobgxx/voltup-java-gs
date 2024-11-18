@@ -6,7 +6,7 @@ COPY . .
 
 RUN gradle --no-daemon clean bootJar
 
-FROM eclipse-temurin:17-jre-alpine as runner
+FROM gradle:jdk17 as runner
 ARG JARFILE=*.jar
 COPY --from=builder /app/build/libs/${JARFILE} application.jar
 
