@@ -6,6 +6,16 @@
 - Matheus Valero Colim
 - Diego Borges
 
+## Descrição
+
+VoltUp é um aplicativo inovador que revoluciona a forma como você experiencia a mobilidade elétrica. Com o VoltUp, encontrar estações de carregamento, planejar rotas e conectar-se com outros entusiastas de veículos elétricos nunca foi tão fácil.
+
+## Funcionalidades Principais
+* Localizador de estações
+* Planejamento de rotas
+* Perfil personalizado
+* Comunidade
+* Notificações
 
 ## Endpoints
 
@@ -19,7 +29,6 @@
   {
     "username": "Nome do Usuário",
     "email": "email@dominio.com",
-    "type": "PRODUCER"
   }
   ```
 - **Resposta de Sucesso:** Retorna o usuário criado com status 200 OK.
@@ -43,13 +52,13 @@ Para executar este projeto em sua máquina local, siga as instruções abaixo:
 2. Clone este repositório para o seu ambiente local:
 
    ```bash
-   git clone https://github.com/PauloCesarRR/voltup-java.git
+   git clone https://github.com/PauloCesarRR/voltup-java.-gsgit
    ```
 
 3. Navegue até o diretório raiz do projeto:
 
    ```bash
-   cd voltup-java
+   cd voltup-java-gs
    ```
 
 4. Execute o seguinte comando para construir o projeto:
