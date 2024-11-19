@@ -8,20 +8,25 @@ spring:
   application:
     name: app
   datasource:
-    url: jdbc:oracle:thin:@oracle.fiap.com.br:1521/ORCL
-    username: RM99615
-    password: 260105
-    driver-class-name: oracle.jdbc.OracleDriver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
+    driver-class-name: org.h2.Driver
+    database-platform: org.hibernate.dialect.H2Dialect
   jpa:
     show-sql: true
     hibernate:
       ddl-auto: update
+  h2:
+    console:
+      enabled: true
+
   flyway:
-    url: jdbc:oracle:thin:@oracle.fiap.com.br:1521/ORCL
-    user: RM99615
-    password: 260105
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password: password
     locations: db/migration/
-    enabled: true
+    enabled: false
     baseline-on-migrate: true
   ai:
     openai:
