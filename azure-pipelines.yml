@@ -5,9 +5,19 @@
 trigger:
 - main
 
+
 resources:
 - repo: self
+jobs:
+- job: Job1
+  # ...
+- job: Job2
+  # ...
+- job: Job3
+  # ...
 
+strategy:
+  maxParallel: 2 # Define o máximo de 2 jobs em paralelo
 variables:
   # Container registry service connection established during pipeline creation
   dockerRegistryServiceConnection: '12fadf8f-6687-4748-adbb-1b01e2b8f462'
