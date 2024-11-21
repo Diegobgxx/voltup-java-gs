@@ -8,13 +8,6 @@ trigger:
 
 resources:
 - repo: self
-jobs:
-- job: Job1
-  # ...
-- job: Job2
-  # ...
-- job: Job3
-  # ...
 
 strategy:
   maxParallel: 2 # Define o máximo de 2 jobs em paralelo
@@ -31,6 +24,8 @@ variables:
 
 stages:
 - stage: Build
+strategy:
+  maxParallel: 2 # Define o máximo de 2 jobs em paralelo
   displayName: Build and push stage
   jobs:
   - job: Build
